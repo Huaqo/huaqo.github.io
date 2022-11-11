@@ -1,4 +1,3 @@
-
 *:focus         { outline: none}
 ::selection       { background: #eee; opacity:1.0; color:#000; padding:10px; /* Safari */ }
 
@@ -101,7 +100,6 @@ ul.nobull li {list-style-type: none}
 
 @media (prefers-color-scheme: dark) {
   body {background: #000; color: white}
-  body header a img { filter: invert(1)}
   body a { color: white;}
   main > pre { background: white; color:#000}
   main > code { background:white; color:#000}
