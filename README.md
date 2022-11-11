@@ -1,3 +1,3 @@
 # huaqo.com
 
-https://huaqo.itch.io/asteroid-shooter
+https://huaqo.github.io/huaqo.github.io/
