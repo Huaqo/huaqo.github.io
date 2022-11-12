@@ -1,3 +1,3 @@
 # huaqo.com
 
-https://huaqo.github.io/huaqo.github.io/
+https://huaqo.github.io
