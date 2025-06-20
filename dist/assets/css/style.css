@@ -237,22 +237,6 @@ img, svg {
     height: auto;
 }
 
-.hero__rings {
-    position: absolute;
-    right: 50%;
-    top: 130px;
-    /* 8.125rem; */
-    z-index: -1;
-    /* width: 33.125rem; */
-    height: auto;
-}
-
-.hero__circle {
-    position: relative;
-    top: 171px;
-    margin-bottom: -129px;
-    translate: calc(100vw - 64px - 16px);
-}
 
 .hero__text {
     position: relative;
@@ -302,32 +286,6 @@ h1 > span {
         order: 2;
     }
 
-    .hero__image {
-        position: relative;
-        width: 42vw;
-        max-width: 445px;
-        /* width: 322px; */
-        height: auto;
-        left: auto;
-        right: 0;
-        translate: 0;
-    }
-
-    .hero__rings {
-        top: 90px;
-        right: auto;
-        left: 0;
-        translate: -50%;
-    }
-
-    .hero__circle {
-        position: absolute;
-        top: auto;
-        right: 0;
-        bottom: 190px;
-        translate: 50%;
-        z-index: 1;
-    }
 
     .hero__text {
         /* width: 62vw; */
@@ -366,23 +324,6 @@ h1 > span {
         align-items: flex-start;
     }
 
-    .hero__content picture {
-        margin-left: -80px;
-    }
-
-    .hero__image {
-        margin-block-start: -199px;
-    }
-
-    .hero__rings {
-        top: 0px;
-        translate: -50% -50%;
-    }
-
-    .hero__circle {
-        top: 322px;
-        right: 445px;
-    }
 
     .hero__text {
         margin-block-start: 0;
@@ -432,12 +373,6 @@ h1 > span {
     margin-block-end: 0;
 }
 
-.skills__rings {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    translate: 0 50%;
-}
 
 @media (min-width: 37.5em) {
     .skills__wrapper {
@@ -451,9 +386,6 @@ h1 > span {
         text-align: left;
     }
 
-    .skills__rings {
-        translate: 40% 50%;
-    }
 }
 
 @media (min-width: 62.5em) {
@@ -463,10 +395,6 @@ h1 > span {
         padding-block-start: 72px;
     }
 
-    .skills__rings {
-        translate: -40% 50%;
-        left: 100%;
-    }
 }
 
 /* PROJECTS */
@@ -496,15 +424,6 @@ h1 > span {
     grid-column: 1 / span 2;
 }
 
-.projects__picture {
-    display: block;
-    margin-block-end: 20px;
-}
-    
-.projects__image {
-    width: 100%;
-    height: auto;        
-}
 
 
 .projects__name {
@@ -523,12 +442,6 @@ h1 > span {
     text-transform: uppercase;
 }
 
-.projects__links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
 
 @media (min-width: 37.5em) {
     .projects__grid {
@@ -563,13 +476,6 @@ h1 > span {
         margin-inline-end: 18px;
     }
 
-    .projects__links a {
-        margin-inline-end: 30px;
-    }
-
-    .project__links {
-        display: block;
-    }
 }
 
 @media (min-width: 62.5em) {
@@ -583,22 +489,6 @@ h1 > span {
         grid-template-rows: repeat(4, auto);
     }
 
-    .projects__picture {
-        position: relative;
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
-    }
-
-    .projects__picture::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        background-color: hsl(0, 0%, 0%);
-        opacity: 0;
-        transition: opacity 150ms ease-in-out;
-    }
 
     .projects__item:hover .projects__picture::after {
         opacity: 0.5;
@@ -612,25 +502,6 @@ h1 > span {
     }
 
     .projects__item:focus-within .projects__picture::after {
-        opacity: 0.5;
-    }
-
-    .projects__image {
-        width: 100%;
-        height: auto;
-    }
-
-    .projects__links {
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
-        justify-self: center;
-        align-self: center;
-        z-index: 1;
-        opacity: 0;
-        transition: opacity 400ms ease-in-out;
-    }
-
-    .projects__links:hover ~ .projects__picture::after {
         opacity: 0.5;
     }
 
@@ -712,19 +583,8 @@ h1 > span {
     translate: none;
 }
 
-.contact__rings {
-    position: absolute;
-    left: 0;
-    bottom: 97px;
-    translate: -75%;
-}
 
-@media (min-width: 37.5em) {
-    .contact__rings {
-        bottom: 47px;
-        translate: -75%;
-    }
-}
+
 
 @media (min-width: 62.5em) {
     .contact__wrapper {
@@ -735,10 +595,6 @@ h1 > span {
 
     .contact__headline {
         margin-block-end: var(--fs-36);
-    }
-
-    .contact__rings {
-        translate: -40%;
     }
 }
 

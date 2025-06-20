@@ -64,16 +64,6 @@ def copy_folder(src_folder, target_folder):
         else:
             shutil.copy(src_path, dest_path)
 
-def generate_blog_page(pages):
-    template = env.get_template('blog.html')
-
-    try:
-        output = template.render(pages=pages)
-    except Exception as e:
-        print(f"Error during template rendering: {e}")
-
-    with open(os.path.join(POST_DIR, 'index.html'), 'w') as f:
-        f.write(output)
 
 def generate_index_page(pages):
     template = env.get_template('index.html')
@@ -95,10 +85,8 @@ def build():
     
     process_content(all_pages_metadata)  # Pass the list to the function to populate it
     copy_folder(ASSETS_DIR, os.path.join(TARGET_DIR, 'assets'))
-    copy_folder(ADMIN_DIR, os.path.join(TARGET_DIR, 'admin'))
     
     # Generate the landing page
-    generate_blog_page(all_pages_metadata)
     generate_index_page(all_pages_metadata)
 
 

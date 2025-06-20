@@ -8,11 +8,11 @@ This is my personal website. It's built with my custom static site generator.
 # Build
 
 ```bash
-python3 build.py && (cd src/docs && mkdocs build && cd -)
+python3 build.py
 ```
 
 # Serve
 
 ```bash
-(cd src/docs && mkdocs serve && cd -)
+open dist/index.html
 ```

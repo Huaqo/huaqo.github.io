@@ -1,8 +1,17 @@
-{% include 'blog_head.html'%}
-<body>
-    {% include 'header.html'%}
-    {% include 'blog_hero.html'%}
-    {% include 'blog_main.html'%}
-    {% include 'blog_contact.html'%}
-    {% include 'footer.html'%}
-</body>
+<section id="projects" class="projects">
+    <div class="wrapper projects__wrapper">
+        <div class="projects__grid">
+            <h2 class="projects__headline header-xl">Blog</h2>
+            <a href="#contact" class="projects__contact underline"></a>
+            {% for page in pages|sort(attribute='date', reverse=True) %}                            
+                    <div class="projects__item">
+                        <h3><a href="blog/{{ page.url }}" class="projects__name">{{ page.title }}</a></h3>
+                        <p> {{page.description}}</p>
+                        <p class="projects__tags">
+                            <span>{{page.tags}}</span>
+                        </p>
+                    </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
