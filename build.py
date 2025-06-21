@@ -8,8 +8,6 @@ from jinja2 import Environment, FileSystemLoader
 SOURCE_DIR = "src/blog"
 TARGET_DIR = "."
 POST_DIR = "blog"
-ASSETS_DIR = "src/assets"
-ADMIN_DIR = "src/admin"
 TEMPLATE_DIR = "src/templates"
 
 env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
@@ -21,7 +19,7 @@ def ensure_dir(directory):
 def extract_metadata_and_content(full_content):
     parts = full_content.split('---')
     if len(parts) < 3:
-        return {}, full_content  # No front matter found
+        return {}, full_content
     metadata = yaml.safe_load(parts[1])
     content = '---'.join(parts[2:])
     return metadata, content.strip()
@@ -51,20 +49,6 @@ def process_content(all_pages_metadata):
                 page_info['url'] = filename.replace(".md", ".html")
                 all_pages_metadata.append(page_info)
 
-def copy_folder(src_folder, target_folder):
-    ensure_dir(target_folder)
-    for filename in os.listdir(src_folder):
-        src_path = os.path.join(src_folder, filename)
-        dest_path = os.path.join(target_folder, filename)
-
-        if os.path.isdir(src_path):
-            if os.path.exists(dest_path):
-                shutil.rmtree(dest_path)
-            shutil.copytree(src_path, dest_path)
-        else:
-            shutil.copy(src_path, dest_path)
-
-
 def generate_index_page(pages):
     template = env.get_template('index.html')
 
@@ -79,14 +63,8 @@ def generate_index_page(pages):
 def build():
     ensure_dir(TARGET_DIR)
     ensure_dir(POST_DIR)
-    
-    # List to store metadata of all pages
     all_pages_metadata = []
-    
-    process_content(all_pages_metadata)  # Pass the list to the function to populate it
-    copy_folder(ASSETS_DIR, os.path.join(TARGET_DIR, 'assets'))
-    
-    # Generate the landing page
+    process_content(all_pages_metadata)
     generate_index_page(all_pages_metadata)
 
 
