@@ -6,8 +6,8 @@ from jinja2 import Environment, FileSystemLoader
 
 
 SOURCE_DIR = "src/blog"
-TARGET_DIR = "dist"
-POST_DIR = "dist/blog"
+TARGET_DIR = "."
+POST_DIR = "blog"
 ASSETS_DIR = "src/assets"
 ADMIN_DIR = "src/admin"
 TEMPLATE_DIR = "src/templates"
