@@ -6,7 +6,7 @@ from jinja2 import Environment, FileSystemLoader
 from bs4 import BeautifulSoup
 
 
-TARGET_DIR = "dist"
+TARGET_DIR = "docs"
 TEMPLATE_DIR = "src/templates"
 NOTES_DIR = "src/notes"
 
